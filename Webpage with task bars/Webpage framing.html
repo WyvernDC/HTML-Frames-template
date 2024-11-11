@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Framed Webpage Melendres</title>
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: grid;
+      place-items: center;
+      background-color: #000000;
+    }
+
+    /* Main Container */
+    .container {
+      display: grid;
+      grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+      grid-template-columns: 1fr 3fr;
+      grid-template-rows: auto 1fr auto;
+      gap: 10px;
+      width: 90%;
+      max-width: 100%;
+      min-height: 90vh;
+      background-color: rgb(0, 200, 255);
+      padding: 20px;
+      border: 5px solid #333;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Header */
+    .header {
+      grid-area: header;
+      background-color: #a93226;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 1.8em;
+      border: 2px solid #333;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      grid-area: sidebar;
+      background-color: #eee;
+      padding: 15px;
+      border: 2px solid #333;
+    }
+
+    /* Main content */
+    .main {
+      grid-area: main;
+      padding: 0;
+      border: 2px solid #333;
+    }
+
+    /* Footer */
+    .footer {
+      grid-area: footer;
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 5px;
+      font-size: 0.9em;
+      border: 2px solid #333;
+    }
+
+    /* Sidebar Links */
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar li {
+      margin-bottom: 10px;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: #f1c40f;
+      font-weight: bold;
+    }
+
+    /* Iframe Styling */
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    details summary {
+      font-size: 1.4em; /* Change this value to increase/decrease the font size */
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header Section -->
+    <div class="header">
+      HOLY CROSS OF DAVAO COLLEGE
+    </div>
+
+
+    <!-- Sidebar Section -->
+    <div class="sidebar">
+      <h1><center><a href="menu/gifmenu.gif" type="gif" target="content-frame">Menu</a></h1></center>
+      <details>
+        <summary>Christmas songs</summary>
+        <ul><h3>
+          <li><a href="SOngs and poems need for this/(7)All I Want For Christmas Is You.html" target="content-frame">All I want for Christmas is you</a></li>
+          <li><a href="SOngs and poems need for this/(8)Christmas ,Baby Please Come Home.html" target="content-frame">Christmas (Baby Please Come Home)</a></li>
+          <li><a href="SOngs and poems need for this/(9)Baby, It_s Cold Outside copy.html" target="content-frame">Baby, It's Cold Outside</a></li>
+          <li><a href="SOngs and poems need for this/(10)Last Christmas.html" target="content-frame">Last Christmas</a></li>
+          <li><a href="SOngs and poems need for this/(11)Santa tell me.html" target="content-frame">Santa tell me</a></li>
+          <li><a href="SOngs and poems need for this/(12)Jingle Bell Rock.html" target="content-frame">Jingle Bell Rock</a></li>
+        </h3></ul>
+      </details>
+      <br>
+      <details>
+
+        <summary>Poems</summary>
+        <ul><h3>
+          <li><a href="SOngs and poems need for this/(1)Paladin.html" target="content-frame">Paladin</a></li>
+          <li><a href="SOngs and poems need for this/(2)The Angel.html" target="content-frame">The Angel</a></li>
+          <li><a href="SOngs and poems need for this/(3)Daydream.html" target="content-frame">Daydream</a></li>
+          <li><a href="SOngs and poems need for this/(4)A Dead Boche.html" target="content-frame">A Dead Boche</a></li>
+          <li><a href="SOngs and poems need for this/(5)Would It Be Ok.html" target="content-frame">Would It Be Ok</a></li>
+          <li><a href="SOngs and poems need for this/(6)There_s Nothing I Can Do.html" target="content-frame">There's</a></li>
+        </h3></ul>
+      </details>
+      <br>
+      <details>
+
+        <summary>Others</summary>
+        <ul><h3>
+          <li><a href="https://9animetv.to" target="_blank" rel="noopener noreferrer">9anime</a></li>
+          <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+          <li><a href="https://youtube.com/" target="_blank" rel="noopener noreferrer">Youtube</a></li>
+          <li><a href="https://steamunlocked.net/" target="content-frame">Steam Unlocked</a></li>
+          <li><a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">ChatGPT</a></li>
+        </h3></ul>
+      </details>
+    </div>
+
+    <!-- Main Content Section with Iframe -->
+    <div class="main">
+      <iframe name="content-frame" src="menu/gifmenu.gif" type="gif" style="background-color: lightblue"></iframe>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+      DAVID KSYL E. MELENDRES
+      <br>
+      BSIT 1ST YEAR
+    </div>
+  </div>
+
+  <!-- Script para to ensure only one <details>ang ma remains open -->
+  <script>
+    const detailsElements = document.querySelectorAll(".sidebar details");
+
+    detailsElements.forEach((detail) => {
+      detail.addEventListener("toggle", () => {
+        if (detail.open) {
+          detailsElements.forEach((otherDetail) => {
+            if (otherDetail !== detail) {
+              otherDetail.open = false;
+            }
+          });
+        }
+      });
+    });
+  </script>
+
+  
+</body>
+</html>
